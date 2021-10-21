@@ -1,10 +1,12 @@
+// dependency
 const path = require("path");
-
+// will be html get requests!
 module.exports = function(app) {
-    app.get("/", function(req, res){
-        res.sendFile(path.join(__dirname, "/../public/index.html"));
+    app.get('/notes', function(request, response) {
+        response.sendFile(path.join(__dirname, '../public/notes.html'));
     });
-    app.get("/notes", function(req, res){
-        res.sendFile(path.join(__dirname, "/../public/notes.html"));
+
+    app.get('*', function(request, response) {
+        response.sendFile(path.join(__dirname, '../public/index.html'));
     });
-}
+};
