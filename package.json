@@ -1,0 +1,26 @@
+{
+  "name": "hacnotetaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HacAtac/hacNoteTaker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HacAtac/hacNoteTaker/issues"
+  },
+  "homepage": "https://github.com/HacAtac/hacNoteTaker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
