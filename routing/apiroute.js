@@ -28,12 +28,36 @@ module.exports = function(app, fs) {
             if (err) {
                 return console.log(err);
             }
-            console.log("Input has been saved!");
+            console.log("SAVED!");
         });
         res.json(newNote);
     });
     
-
+    //deletes note with id #
+    app.delete('/api/notes/:id', function(req, res) {
+        let database = path.join(__dirname, '../db/db.json')
+        //loop through to find id
+        for(let i = 0; i < data.length; i++) {
+        
+            if(data[i].id == req.params.id) {
+        
+                //splice note
+                data.splice(i, 1);   
+                break;
+                }
+            }
+            //console log to show deleted note
+            fs.writeFile(database, JSON.stringify(data), function(err) {
+        
+                if(err) {
+                    return console.log(err);
+                } else {
+                    console.log("SHE GONE!");
+                }
+            });
+            //response in json format with database data paramas
+            res.json(data);
+        });
 
 
 }
