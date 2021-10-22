@@ -18,7 +18,8 @@
   "homepage": "https://github.com/HacAtac/hacNoteTaker#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "uuidv4": "^6.2.12"
   },
   "devDependencies": {
     "jest": "^27.3.1"
