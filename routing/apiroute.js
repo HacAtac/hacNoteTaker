@@ -1,5 +1,5 @@
 let path = require("path");
-
+// function to hold get/post/delete routes also exports function
 module.exports = function(app, fs) {
     const data = require('../db/db.json');
 
@@ -11,11 +11,17 @@ module.exports = function(app, fs) {
 
     //post route to create user nots
     app.post('/api/notes', function(req, res) {
+        //variable that stores req.body
         let newNote = req.body;
+        //variable to store id # and assigning it to the value of one
         let id = 1;
+        //for loop to loop through json objects data.length
         for (let i = 0; i < data.length; i++) {
+        // variable that stores the index of data
             let note = data[i];
+        // if note.id is greater than the id #
             if (note.id > id) {
+        // then updates the id to the value of note.id
                 id = note.id;
             }
         }
@@ -30,6 +36,7 @@ module.exports = function(app, fs) {
             }
             console.log("SAVED!");
         });
+        //responds the newNote variable 'req.body' as json object
         res.json(newNote);
     });
     

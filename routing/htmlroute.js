@@ -1,7 +1,7 @@
 // dependency
 let path = require("path");
 
-// will be html get requests!
+//html get requests also exports function
 module.exports = function(app, fs) {
     app.get('/notes', function(req, res) {
         res.sendFile(path.join(__dirname, '../public/notes.html'));
